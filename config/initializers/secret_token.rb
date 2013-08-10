@@ -16,6 +16,7 @@
     else
       token = SecureRandom.hex(64)
       File.write(token_file, token)
+      token
     end
   end
-SampleApp::Application.config.secret_key_base = '7eb636cde8a73b9b81bad6429d0a2369555dc2804cf48c9865d5d7e3f68a064561ba6d8589a47c44c2922b25894989804468813b48c4876128dc2cdb84344b58'
+SampleApp::Application.config.secret_key_base = secure_token
